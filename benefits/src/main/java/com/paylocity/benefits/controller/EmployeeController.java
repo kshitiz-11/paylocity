@@ -25,10 +25,12 @@ public class EmployeeController {
     Logger logger = LoggerFactory.getLogger(EmployeeController.class);
 
     @PutMapping("/employee/{id}")
-    public ResponseEntity<?> calculateBenefit(@Valid @RequestBody Employee employee, BindingResult bindingResult){
+    public ResponseEntity<?> calculateBenefit(@PathVariable Long id, @Valid @RequestBody Employee employee, BindingResult bindingResult){
 
         ResponseEntity<?> errorMap = validationError.ValidationError(bindingResult);
         if(errorMap!=null) return errorMap;
+
+        if(!id.equals(employee.getId())) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 
         Employee eSave = employeeService.updateEmployee(employee);
         logger.debug("Employee updated with id = " + employee.getId());

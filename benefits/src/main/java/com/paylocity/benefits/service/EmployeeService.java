@@ -1,9 +1,9 @@
 package com.paylocity.benefits.service;
 
+import com.paylocity.benefits.exception.EmployeeNotFoundException;
 import com.paylocity.benefits.model.Employee;
 import com.paylocity.benefits.model.EmployeeFinance;
 import com.paylocity.benefits.repository.EmployeeRepository;
-import com.paylocity.benefits.exception.EmployeeNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

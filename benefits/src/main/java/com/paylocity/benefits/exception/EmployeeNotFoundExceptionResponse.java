@@ -1,18 +1,17 @@
 package com.paylocity.benefits.exception;
 
 public class EmployeeNotFoundExceptionResponse {
+    private String employeeNotFound;
 
-    private String NotFound;
-
-    public EmployeeNotFoundExceptionResponse(String projectNotFound) {
-        this.NotFound = projectNotFound;
+    public EmployeeNotFoundExceptionResponse(String employeeNotFound) {
+        this.employeeNotFound = employeeNotFound;
     }
 
-    public String getProjectNotFound() {
-        return NotFound;
+    public String getEmployeeNotFound() {
+        return employeeNotFound;
     }
 
-    public void setProjectNotFound(String projectNotFound) {
-        this.NotFound = projectNotFound;
+    public void setEmployeeNotFound(String employeeNotFound) {
+        this.employeeNotFound = employeeNotFound;
     }
 }
